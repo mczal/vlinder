@@ -1,0 +1,158 @@
+html, body{
+	height:100%;
+}
+
+#copyright{
+	color:gray;
+	text-align:center;
+	font-size:10;
+}
+
+.bottom{
+	display:inline-block;
+	position:absolute;
+	bottom:0;
+	width:100%;
+	height:20%;
+	text-align:center;
+	margin-bottom:-20px;
+}
+
+.higher-bottom-navbar{
+	color:blue;
+}
+
+.higher-bottom-navbar a:hover{
+	text-decoration:none;
+	color:orange;
+}
+
+.higher-bottom-navbar a:active{
+	color:gray;
+	text-decoration:none;
+}
+
+.lower-bottom-navbar a{
+	color:orange;
+}
+
+.lower-bottom-navbar a:hover{
+	text-decoration:none;
+	color:gray;
+}
+
+.lower-bottom-navbar a:active{
+	color:gray;
+	text-decoration:none;
+}
+
+.higher-bottom-navbar .our{
+	color:red;
+}
+
+
+#spirit{
+	width:100%;
+	height:100%;
+}
+
+
+
+.tag{
+	width:25%;
+	text-align:right;
+	float:left;
+	height:100%;
+}
+
+.content{
+	width:65%;
+	text-align:left;
+	float:left;
+	height:100%;
+}
+
+/*xs*/
+
+@media(max-height: 250px){
+	#home{
+		width:100%;
+		height:200px;
+		background:url("../assets/backgroundB.jpg") no-repeat center center fixed;
+		background-size:cover;
+	}
+	#spirit{
+		width:100%;
+		background:url("../assets/backgroundC.jpg") no-repeat center center fixed;
+		background-size:cover;
+		font-size:8px;
+		color:gray;
+	}
+	.real-content{
+		height:200px;
+	}
+	.tag{
+		color:darkblue;
+		font-size:12px;
+	}
+	.tag .tag-our{
+		color:red;
+		font-size:15px;
+	}
+	.bottom{
+		margin-bottom:18px;
+		font-size:10px;
+	}
+}
+
+/*sm*/
+
+@media(min-height: 250px) and (max-height: 400px){
+	#home{
+		width:100%;
+		height:330px;
+		background:url("../assets/backgroundB.jpg") no-repeat center center fixed;
+		background-size:cover;
+	}
+	#spirit{
+		width:100%;
+		background:url("../assets/backgroundC.jpg") no-repeat center center fixed;
+		background-size:cover;
+	}
+	.bottom{
+		margin-bottom:10px;
+	}
+}
+
+/*md*/
+
+@media(min-height: 400px) and (max-height: 500px){
+	#home{
+		width:100%;
+		background:url("../assets/backgroundB.jpg") no-repeat center center fixed;
+		background-size:cover;
+	}
+	#spirit{
+		width:100%;
+		background:url("../assets/backgroundC.jpg") no-repeat center center fixed;
+		background-size:cover;
+	}
+}
+
+/*lg*/
+
+@media(min-height: 500px){
+	#home{
+		width:100%;
+		background:url("../assets/backgroundB.jpg") no-repeat center center fixed;
+		background-size:cover;
+	}
+	#spirit{
+		width:100%;
+		background:url("../assets/backgroundC.jpg") no-repeat center center fixed;
+		background-size:cover;
+	}
+	.bottom{
+		margin-bottom:-40px;
+	}
+}

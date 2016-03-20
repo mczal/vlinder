@@ -12,8 +12,25 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.home');
 });
+
+Route::get('admin', function () {
+    return view('layouts.admin');
+});
+Route::get('contact',function(){
+  return view('frontend.contact');
+});
+Route::get('feature',function(){
+  return view('frontend.feature');
+});
+Route::get('spirit',function(){
+  return view('frontend.spirit');
+});
+Route::get('clients','Frontend\ClientController@index');
+Route::get('galleries','Frontend\GalleryController@index');
+Route::get('galleries/{id}','Frontend\GalleryController@show');
+Route::get('provisions','Frontend\ProvisionController@index');
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +46,4 @@ Route::get('/', function () {
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/home', 'HomeController@index');
 });
