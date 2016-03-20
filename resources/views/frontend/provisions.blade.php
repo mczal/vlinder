@@ -10,11 +10,15 @@
 				<div class="tag-label">provisions</div>
 			</div>
 			<div class="content col-xs-8 col-xs-offset-1 col-sm-5">
+				@if(count($provisions) > 0)
 				<ul>
-					<li ng-repeat="provision in myProvisions">
-						{{provision.html}}
+					@foreach($provisions as $provision)
+					<li>
+						{{$provision->description}}
 					</li>
+					@endforeach
 				</ul>
+				@endif
 			</div>
 		</div>
 

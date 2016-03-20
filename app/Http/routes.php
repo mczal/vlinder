@@ -16,12 +16,12 @@ Route::get('/', function () {
 });
 
 Route::get('admin', function () {
-    return view('layouts.admin');
+    return redirect('/admin/clients');
 });
 Route::get('contact',function(){
   return view('frontend.contact');
 });
-Route::get('feature',function(){
+Route::get('features',function(){
   return view('frontend.feature');
 });
 Route::get('spirit',function(){
@@ -45,5 +45,8 @@ Route::get('provisions','Frontend\ProvisionController@index');
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
-
+    Route::resource('admin/clients','ClientController');
+    Route::resource('admin/galleries','GalleryController');
+    Route::resource('admin/provisions','ProvisionController');
+    Route::resource('admin/images','ImageController');
 });

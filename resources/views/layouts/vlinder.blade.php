@@ -14,16 +14,16 @@
 
 	<div class="bottom">
 		<div class="higher-bottom-navbar">
-			<a href="/spirit"><span class="our">our </span>spirit</a>
-			<a href="/feature"><span class="our">our </span>feature</a>
-			<a href="/provisions"><span class="our">our </span>provisions</a>
-			<a href="/clients"><span class="our">our </span>clients</a>
-			<a href="/gallery"><span class="our">our </span>gallery</a>
-			<a href="/contact"><span class="our">our </span>contact</a>
+			<a href="{{ url('/spirit') }}"><span class="our">our </span>spirit</a>
+			<a href="{{ url('/features') }}"><span class="our">our </span>feature</a>
+			<a href="{{ url('/provisions') }}"><span class="our">our </span>provisions</a>
+			<a href="{{ url('/clients') }}"><span class="our">our </span>clients</a>
+			<a href="{{ url('/galleries') }}"><span class="our">our </span>gallery</a>
+			<a href="{{ url('/contact') }}"><span class="our">our </span>contact</a>
 
 		</div>
 		<div class="lower-bottom-navbar">
-			<a href="/">HOME</a>
+			<a href="{{ url('/') }}">HOME</a>
 		</div>
 		<div id="copyright">
 			&copy; 2015 Vlinder Corp. All rights reserved.

@@ -14,12 +14,16 @@
 					Our experience has made us a
 					trusted partner for our valued clients:
 				</div>
+				@if(count($clients) > 0)
 				<ul style="list-style:none;">
-					<li id="client-left" ng-repeat="client in myClients">
-						<!-- data here -->
+					@foreach($clients as $client)
+					<li id="client-left">
+						{{$client->name}}
 					</li>
+					@endforeach
 					<li>and many more</li>
 				</ul>
+				@endif
 			</div>
 		</div>
 
