@@ -1,7 +1,7 @@
 @extends('layouts.vlinder')
 
 @section('id-view','clients')
-
+@section('title','our clients')
 @section('content')
 	<div class="real-content ">
 		<div class="row">

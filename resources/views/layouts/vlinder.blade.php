@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html data-ng-app="vlinderModule">
 <head>
-	<title>Vlinder Creative | Beta</title>
-	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.css') }}"/>
+	<title>Vlinder Creative | @yield('title')</title>
+	<!-- favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/favicon.ico') }}" />
+	<link rel="stylesheet" type="text/css" href="{{ asset('/assets/css/bootstrap.css') }}"/>
 	<link rel="stylesheet" type="text/css" href="{{ asset('/assets/css/custom.css') }}"/>
+
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="{{ asset('/bower_components/adminLTE/bootstrap/css/bootstrap.min.css') }}">
+	<!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 <body>
 

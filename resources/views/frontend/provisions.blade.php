@@ -1,5 +1,5 @@
 @extends('layouts.vlinder')
-
+@section('title','our provisions')
 @section('id-view','provisions')
 
 @section('content')

@@ -117,7 +117,7 @@ body{
 		margin:0px 5px;
 		color:blue;
 	}
-	
+
 	.tag-our{
 		font-size:30px;
 		width:100%;
@@ -130,11 +130,10 @@ body{
 		margin-top:15px;
 		color:blue;
 	}
-	
+
 	.content{
 		font-family:vlinderFont;
 		color:gray;
 		font-size:12px;
 	}
 }
-

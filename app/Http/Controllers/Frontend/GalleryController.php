@@ -18,4 +18,11 @@ class GalleryController extends Controller
         'galleries' => $galleries,
       ]);
     }
+
+    public function show($id){
+      $gallery = Gallery::where('id',$id)->first();
+      return view('frontend.gallery-detail',[
+        'gallery' => $gallery,
+      ]);
+    }
 }

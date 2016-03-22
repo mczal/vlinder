@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Client;
 
 class ClientController extends Controller
 {
@@ -22,6 +23,10 @@ class ClientController extends Controller
 	public function index()
 	{
 		//
+		$clients = Client::orderBy('order')->paginate(10);
+		return view('clients.index',[
+			'clients' => $clients,
+		]);
 	}
 
 	/**
@@ -32,6 +37,7 @@ class ClientController extends Controller
 	public function create()
 	{
 		//
+		return view('clients.create');
 	}
 
 	/**
@@ -39,9 +45,19 @@ class ClientController extends Controller
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		//
+		$this->validate($request, [
+				'name' => 'required',
+				'order' => 'required|integer',
+		]);
+
+		$client = new Client;
+		$client->fill($request->all());
+		//dd($client);
+		$client->save();
+		return redirect('/admin/clients')->with('success_message', 'Client #<b>' . $client->name . '</b> was created.');
 	}
 
 	/**
@@ -53,6 +69,10 @@ class ClientController extends Controller
 	public function show($id)
 	{
 		//
+		$client = Client::where('id',$id)->first();
+		return view('clients.show',[
+			'client' => $client,
+		]);
 	}
 
 	/**
@@ -64,6 +84,10 @@ class ClientController extends Controller
 	public function edit($id)
 	{
 		//
+		$client = Client::where('id',$id)->first();
+		return view('clients.edit',[
+			'client' => $client,
+		]);
 	}
 
 	/**
@@ -72,9 +96,17 @@ class ClientController extends Controller
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id,Request $request)
 	{
 		//
+		$this->validate($request,[
+			'name' => 'required',
+			'order' => 'required|integer',
+		]);
+		$client = Client::where('id',$id)->first();
+		$client->fill($request->all());
+		$client->save();
+		return redirect('/admin/clients/')->with('success_message', 'Client #<b>' . $client->name . '</b> was updated.');
 	}
 
 	/**
@@ -86,5 +118,9 @@ class ClientController extends Controller
 	public function destroy($id)
 	{
 		//
+		$client = Client::where('id',$id)->first();
+		$name = $client->name;
+		$client->delete();
+		return redirect('/admin/clients/')->with('success_message','Client #<b>'. $client->name . '</b> was deleted');
 	}
 }
